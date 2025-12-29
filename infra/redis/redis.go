@@ -15,7 +15,7 @@ var (
 )
 
 // Init 连接到 Redis 数据库, 生成一个 *redis.Client 赋给全局数据库变量 RedisClient
-func Init(confDir, confFileName, confFileType string) redis.UniversalClient {
+func Init(confDir, confFileName, confFileType string) {
 	// 初始化 Viper 进行配置读取
 	viper := viper.InitViper(confDir, confFileName, confFileType)
 	host := viper.GetString("redis.host")
@@ -41,7 +41,6 @@ func Init(confDir, confFileName, confFileType string) redis.UniversalClient {
 		slog.Info("connect to Redis succeed")
 	}
 
-	return RedisClient
 }
 
 // Ping ping 一下数据库 保持连接

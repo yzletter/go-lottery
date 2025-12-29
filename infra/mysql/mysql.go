@@ -26,7 +26,7 @@ type PoolConfig struct {
 }
 
 // Init 初始化数据库
-func Init(confDir, confFileName, confFileType, logDir string) *gorm.DB {
+func Init(confDir, confFileName, confFileType, logDir string) {
 	// 读取 MySQL 相关配置
 	vip := viper.InitViper(confDir, confFileName, confFileType) // 初始化一个 Viper 进行配置读取
 	host := vip.GetString("mysql.host")
@@ -80,7 +80,6 @@ func Init(confDir, confFileName, confFileType, logDir string) *gorm.DB {
 	// 赋给全局变量 GromDB
 	GromDB = db
 
-	return GromDB
 }
 
 // Ping 保持与 MySQL 的连接

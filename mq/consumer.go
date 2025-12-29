@@ -16,7 +16,7 @@ import (
 	"github.com/yzletter/go-lottery/repository"
 )
 
-func init() {
+func InitRocketLog() {
 	// 将 rocketmq 的日志输出到控制台
 	os.Setenv(rmq_client.ENABLE_CONSOLE_APPENDER, "true")
 	rmq_client.ResetLogger()

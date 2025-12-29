@@ -1,0 +1,131 @@
+time="2025-12-29 21:00:45.118" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/mysql/mysql.go:69 msg="初始化 MySQL 成功 ..."
+time="2025-12-29 21:00:45.118" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/mysql/mysql.go:78 msg="配置 MySQL 连接池成功 ..."
+time="2025-12-29 21:00:45.123" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/redis/redis.go:41 msg="connect to Redis succeed"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:1 1000: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:2 1000: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:3 1000: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:4 200: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:5 300: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:6 400: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:7 1000: OK"
+time="2025-12-29 21:00:45.125" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:8 1000: OK"
+time="2025-12-29 21:00:45.126" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:9 100: OK"
+time="2025-12-29 21:00:45.126" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:10 500: OK"
+time="2025-12-29 21:00:45.131" level=INFO msg="failed to get topic route data result from remote during client startup, clientId=yangzhileideMacBook-Pro.local@75544@0@hecqof7sp9, topics=[CANCEL_ORDER], err=CODE: TOPIC_NOT_FOUND, MESSAGE: CODE: 17  DESC: No topic route info in name server for the topic: CANCEL_ORDER\nFor more information, please visit the url, https://rocketmq.apache.org/docs/bestPractice/06FAQ"
+time="2025-12-29 21:01:27.300" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/mysql/mysql.go:69 msg="初始化 MySQL 成功 ..."
+time="2025-12-29 21:01:27.301" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/mysql/mysql.go:78 msg="配置 MySQL 连接池成功 ..."
+time="2025-12-29 21:01:27.303" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/redis/redis.go:41 msg="connect to Redis succeed"
+time="2025-12-29 21:01:27.304" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:1 1000: OK"
+time="2025-12-29 21:01:27.304" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:2 1000: OK"
+time="2025-12-29 21:01:27.304" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:3 1000: OK"
+time="2025-12-29 21:01:27.311" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:4 200: OK"
+time="2025-12-29 21:01:27.311" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:5 300: OK"
+time="2025-12-29 21:01:27.312" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:6 400: OK"
+time="2025-12-29 21:01:27.312" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:7 1000: OK"
+time="2025-12-29 21:01:27.312" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:8 1000: OK"
+time="2025-12-29 21:01:27.313" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:9 100: OK"
+time="2025-12-29 21:01:27.313" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:29 msg="Set Failed" error="set gift:count:10 500: OK"
+time="2025-12-29 21:01:57.067" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.073" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=10
+time="2025-12-29 21:01:57.076" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.076" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:01:57.078" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.078" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:01:57.081" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.081" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:01:57.082" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.082" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=3
+time="2025-12-29 21:01:57.083" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.083" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=5
+time="2025-12-29 21:01:57.084" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.084" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=3
+time="2025-12-29 21:01:57.085" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.085" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=10
+time="2025-12-29 21:01:57.086" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.086" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:01:57.088" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:57.088" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=4
+time="2025-12-29 21:01:58.712" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.712" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:01:58.714" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.714" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:01:58.715" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.715" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=10
+time="2025-12-29 21:01:58.717" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.717" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:01:58.719" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.719" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:01:58.722" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.722" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=3
+time="2025-12-29 21:01:58.723" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.723" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:01:58.729" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.729" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=4
+time="2025-12-29 21:01:58.731" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.731" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:01:58.733" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:01:58.733" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:02:05.021" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.021" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:05.024" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.024" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:05.028" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.028" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=4
+time="2025-12-29 21:02:05.033" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.033" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=5
+time="2025-12-29 21:02:05.036" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.036" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:02:05.040" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.040" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:02:05.042" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.042" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:02:05.045" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.045" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:05.046" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.046" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=6
+time="2025-12-29 21:02:05.048" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:05.048" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:02:06.352" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.352" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:06.355" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.355" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:02:06.358" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.358" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:06.367" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.367" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:02:06.369" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.369" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:02:06.374" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.374" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=4
+time="2025-12-29 21:02:06.375" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.375" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:06.377" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.377" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:02:06.379" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.379" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:02:06.381" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.381" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:02:06.639" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.639" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=3
+time="2025-12-29 21:02:06.641" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.641" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=3
+time="2025-12-29 21:02:06.643" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.643" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:02:06.645" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.645" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=8
+time="2025-12-29 21:02:06.647" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.647" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=1
+time="2025-12-29 21:02:06.649" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.649" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=2
+time="2025-12-29 21:02:06.651" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.651" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=3
+time="2025-12-29 21:02:06.654" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.654" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=7
+time="2025-12-29 21:02:06.657" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.657" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=10
+time="2025-12-29 21:02:06.663" level=ERROR source=/Users/yzletter/go_project/go-lottery/repository/gift.go:113 msg="GetGift Failed" error="sql: Scan error on column index 0, name \"id = ?\": unsupported Scan, storing driver.Value type int64 into type *model.Gift"
+time="2025-12-29 21:02:06.663" level=ERROR source=/Users/yzletter/go_project/go-lottery/handler/gift.go:64 msg=找不到奖品 gid=10
+time="2025-12-29 21:05:30.401" level=INFO source=/Users/yzletter/go_project/go-lottery/main.go:31 msg="receive term signal interrupt, going to exit"
+time="2025-12-29 21:05:30.401" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/mysql/mysql.go:108 msg="关闭 MySQL 成功 ..."
+time="2025-12-29 21:05:30.401" level=INFO source=/Users/yzletter/go_project/go-lottery/infra/redis/redis.go:66 msg="close RedisClient succeed"
+time="2025-12-29 21:05:30.402" level=INFO source=/Users/yzletter/go_project/go-lottery/mq/consumer.go:67 msg="stop consumer"

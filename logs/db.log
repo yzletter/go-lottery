@@ -1,0 +1,171 @@
+
+2025/12/29 20:58:11 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[1.679ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 20:58:56 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[1.109ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 21:00:45 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[1.033ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 21:01:27 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[0.722ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 21:01:55 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[0.755ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.630ms] [rows:1] SELECT id = 10 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.289ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.203ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.182ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.208ms] [rows:1] SELECT id = 3 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.120ms] [rows:1] SELECT id = 5 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.133ms] [rows:1] SELECT id = 3 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.123ms] [rows:1] SELECT id = 10 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.118ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:01:57 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.177ms] [rows:1] SELECT id = 4 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[1.026ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.320ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.188ms] [rows:1] SELECT id = 10 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.263ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.517ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.270ms] [rows:1] SELECT id = 3 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.175ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.448ms] [rows:1] SELECT id = 4 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.272ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:01:58 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.444ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:01:59 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[0.489ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 21:02:00 /Users/yzletter/go_project/go-lottery/repository/gift.go:101
+[0.471ms] [rows:10] SELECT * FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.787ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.308ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.350ms] [rows:1] SELECT id = 4 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.587ms] [rows:1] SELECT id = 5 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.353ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.998ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.254ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.252ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.151ms] [rows:1] SELECT id = 6 FROM `inventory`
+
+2025/12/29 21:02:05 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.184ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.820ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.297ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.257ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[1.018ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.433ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.360ms] [rows:1] SELECT id = 4 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.244ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.257ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.199ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.335ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.831ms] [rows:1] SELECT id = 3 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.241ms] [rows:1] SELECT id = 3 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.215ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.224ms] [rows:1] SELECT id = 8 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.228ms] [rows:1] SELECT id = 1 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.409ms] [rows:1] SELECT id = 2 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.240ms] [rows:1] SELECT id = 3 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.512ms] [rows:1] SELECT id = 7 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.365ms] [rows:1] SELECT id = 10 FROM `inventory`
+
+2025/12/29 21:02:06 /Users/yzletter/go_project/go-lottery/repository/gift.go:111 sql: Scan error on column index 0, name "id = ?": unsupported Scan, storing driver.Value type int64 into type *model.Gift
+[0.407ms] [rows:1] SELECT id = 10 FROM `inventory`

@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"log/slog"
-	"os"
 	"sync"
 	"time"
 
@@ -15,19 +14,14 @@ import (
 )
 
 const (
-	END_POINT = "localhost:8081"
+	END_POINT = "127.0.0.1:8081"
 	// ./mqadmin.cmd updateTopic -n localhost:9876 -c DefaultCluster -t CANCEL_ORDER -a +message.type=DELAY
 	// ./mqadmin.cmd deleteTopic -n localhost:9876 -c DefaultCluster -t CANCEL_ORDER
 	TOPIC = "CANCEL_ORDER"
 	// ./mqadmin.cmd updateSubGroup -n localhost:9876 -c DefaultCluster -g lottery
+	// sh mqadmin updateSubGroup -n localhost:9876 -c DefaultCluster -g lottery
 	CONSUMER_GROUP = "go_lottery"
 )
-
-func init() {
-	// 将 rocketmq 的日志输出到控制台
-	os.Setenv(rmq_client.ENABLE_CONSOLE_APPENDER, "true")
-	rmq_client.ResetLogger()
-}
 
 var (
 	producer rmq_client.Producer
