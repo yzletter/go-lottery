@@ -3,30 +3,20 @@ package repository
 import (
 	"context"
 	"errors"
+	infraMySQL "github.com/yzletter/go-lottery/infra/mysql"
+	infraRedis "github.com/yzletter/go-lottery/infra/redis"
+	"github.com/yzletter/go-lottery/model"
 	"log/slog"
 	"strconv"
-
-	"github.com/redis/go-redis/v9"
-	"github.com/yzletter/go-lottery/model"
-	"gorm.io/gorm"
 )
-
-type GiftRepository struct {
-	db    *gorm.DB
-	cache redis.UniversalClient
-}
 
 const (
 	InventoryPrefix = "gift:count:" // 方便遍历
 )
 
-func NewGiftRepository(db *gorm.DB, client redis.UniversalClient) *GiftRepository {
-	return &GiftRepository{db: db, cache: client}
-}
-
 // CreateCacheInventory 把 mysql 初始库存导进 redis
-func (repo *GiftRepository) CreateCacheInventory() {
-	gifts := repo.GetAllGifts()
+func CreateCacheInventory() {
+	gifts := GetAllGifts()
 	for _, gift := range gifts {
 		if gift.Count <= 0 {
 			// 数据有问题
@@ -34,7 +24,7 @@ func (repo *GiftRepository) CreateCacheInventory() {
 			continue
 		}
 
-		err := repo.cache.Set(context.Background(), InventoryPrefix+strconv.Itoa(gift.ID), gift.Count, 0) // 永不过期
+		err := infraRedis.RedisClient.Set(context.Background(), InventoryPrefix+strconv.Itoa(gift.ID), gift.Count, 0) // 永不过期
 		if err != nil {
 			slog.Error("Set Failed", "error", err)
 		}
@@ -42,8 +32,8 @@ func (repo *GiftRepository) CreateCacheInventory() {
 }
 
 // GetCacheInventory 从 Redis 中获得所有商品当前库存量
-func (repo *GiftRepository) GetCacheInventory() []*model.Gift {
-	keys, err := repo.cache.Keys(context.Background(), InventoryPrefix+"*").Result()
+func GetCacheInventory() []*model.Gift {
+	keys, err := infraRedis.RedisClient.Keys(context.Background(), InventoryPrefix+"*").Result()
 	if err != nil {
 		slog.Error("Get Failed", "error", err)
 		return nil
@@ -51,7 +41,7 @@ func (repo *GiftRepository) GetCacheInventory() []*model.Gift {
 
 	gifts := make([]*model.Gift, 0, len(keys))
 	for _, key := range keys {
-		val, err := repo.cache.Get(context.Background(), key).Int()
+		val, err := infraRedis.RedisClient.Get(context.Background(), key).Int()
 		if err != nil {
 			slog.Error("Get Failed", "error", err)
 			continue
@@ -70,9 +60,9 @@ func (repo *GiftRepository) GetCacheInventory() []*model.Gift {
 	return gifts
 }
 
-func (repo *GiftRepository) GetCacheGift(id int) int {
+func GetCacheGift(id int) int {
 	key := InventoryPrefix + strconv.Itoa(id)
-	count, err := repo.cache.Get(context.Background(), key).Int()
+	count, err := infraRedis.RedisClient.Get(context.Background(), key).Int()
 	if err != nil {
 		slog.Error("Get Failed", "error", err)
 		return -1
@@ -81,9 +71,9 @@ func (repo *GiftRepository) GetCacheGift(id int) int {
 }
 
 // 库存 -1
-func (repo *GiftRepository) ReduceCacheGift(id int) error {
+func ReduceCacheGift(id int) error {
 	key := InventoryPrefix + strconv.Itoa(id)
-	count, err := repo.cache.Decr(context.Background(), key).Result()
+	count, err := infraRedis.RedisClient.Decr(context.Background(), key).Result()
 	if err != nil {
 		slog.Error("Get Failed", "error", err)
 		return err
@@ -95,9 +85,9 @@ func (repo *GiftRepository) ReduceCacheGift(id int) error {
 }
 
 // 库存 +1
-func (repo *GiftRepository) IncreaseCacheGift(id int) error {
+func IncreaseCacheGift(id int) error {
 	key := InventoryPrefix + strconv.Itoa(id)
-	_, err := repo.cache.Incr(context.Background(), key).Result()
+	_, err := infraRedis.RedisClient.Incr(context.Background(), key).Result()
 	if err != nil {
 		slog.Error("Get Failed", "error", err)
 		return err
@@ -106,9 +96,9 @@ func (repo *GiftRepository) IncreaseCacheGift(id int) error {
 }
 
 // GetAllGifts 获取所有奖品
-func (repo *GiftRepository) GetAllGifts() []*model.Gift {
+func GetAllGifts() []*model.Gift {
 	var gifts []*model.Gift
-	err := repo.db.Model(&model.Gift{}).Select("*").Find(&gifts).Error
+	err := infraMySQL.GromDB.Model(&model.Gift{}).Select("*").Find(&gifts).Error
 	if err != nil {
 		slog.Error("GetAllGifts Failed", "error", err)
 	}
@@ -116,9 +106,9 @@ func (repo *GiftRepository) GetAllGifts() []*model.Gift {
 }
 
 // GetGift 根据 ID 获取奖品信息
-func (repo *GiftRepository) GetGift(id int) *model.Gift {
+func GetGift(id int) *model.Gift {
 	var gift *model.Gift
-	err := repo.db.Model(&model.Gift{}).Select("id = ?", id).Find(&gift).Error
+	err := infraMySQL.GromDB.Model(&model.Gift{}).Select("id = ?", id).Find(&gift).Error
 	if err != nil {
 		slog.Error("GetGift Failed", "error", err)
 		return nil

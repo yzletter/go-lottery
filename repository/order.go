@@ -2,12 +2,13 @@ package repository
 
 import (
 	"context"
-	"log/slog"
-	"strconv"
-
 	"github.com/redis/go-redis/v9"
+	infraMySQL "github.com/yzletter/go-lottery/infra/mysql"
+	infraRedis "github.com/yzletter/go-lottery/infra/redis"
 	"github.com/yzletter/go-lottery/model"
 	"gorm.io/gorm"
+	"log/slog"
+	"strconv"
 )
 
 type OrderRepository struct {
@@ -24,9 +25,9 @@ func NewOrderRepository(db *gorm.DB, client redis.UniversalClient) *OrderReposit
 }
 
 // CreateTempOrder 创建临时订单
-func (repo *OrderRepository) CreateTempOrder(userID, giftID int) error {
+func CreateTempOrder(userID, giftID int) error {
 	key := tempOrderPrefix + strconv.Itoa(userID)
-	if err := repo.cache.Set(context.Background(), key, giftID, 0).Err(); err != nil {
+	if err := infraRedis.RedisClient.Set(context.Background(), key, giftID, 0).Err(); err != nil {
 		slog.Error("CreateTempOrder Failed", "error", err)
 		return err
 	}
@@ -35,9 +36,9 @@ func (repo *OrderRepository) CreateTempOrder(userID, giftID int) error {
 }
 
 // GetTempOrder 查询临时订单
-func (repo *OrderRepository) GetTempOrder(userID int) int {
+func GetTempOrder(userID int) int {
 	key := tempOrderPrefix + strconv.Itoa(userID)
-	id, err := repo.cache.Get(context.Background(), key).Int()
+	id, err := infraRedis.RedisClient.Get(context.Background(), key).Int()
 	if err != nil {
 		slog.Error("GetTempOrder Failed", "error", err)
 		return 0
@@ -46,11 +47,11 @@ func (repo *OrderRepository) GetTempOrder(userID int) int {
 }
 
 // DeleteTempOrder 删除临时订单
-func (repo *OrderRepository) DeleteTempOrder(userID int) int {
+func DeleteTempOrder(userID int) int {
 	key := tempOrderPrefix + strconv.Itoa(userID)
 
 	// 返回删除订单个数
-	count, err := repo.cache.Del(context.Background(), key).Result()
+	count, err := infraRedis.RedisClient.Del(context.Background(), key).Result()
 	if err != nil {
 		slog.Error("GetTempOrder Failed", "error", err)
 		return 0
@@ -58,13 +59,13 @@ func (repo *OrderRepository) DeleteTempOrder(userID int) int {
 	return int(count)
 }
 
-func (repo *OrderRepository) CreateOrder(userID, giftID int) int {
+func CreateOrder(userID, giftID int) int {
 	order := &model.Order{
 		UserID: userID,
 		GiftID: giftID,
 	}
 
-	err := repo.db.Model(&model.Order{}).Create(order).Error
+	err := infraMySQL.GromDB.Model(&model.Order{}).Create(order).Error
 	if err != nil {
 		slog.Error("CreateOrder Failed", "error", err)
 		return 0

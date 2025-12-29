@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	globalDB *gorm.DB
+	GromDB *gorm.DB
 )
 
 type PoolConfig struct {
@@ -77,16 +77,16 @@ func Init(confDir, confFileName, confFileType, logDir string) *gorm.DB {
 	configureDBPool(db, poolConfig)
 	slog.Info("配置 MySQL 连接池成功 ...")
 
-	// 赋给全局变量 globalDB
-	globalDB = db
+	// 赋给全局变量 GromDB
+	GromDB = db
 
-	return globalDB
+	return GromDB
 }
 
 // Ping 保持与 MySQL 的连接
 func Ping() {
-	if globalDB != nil {
-		sqlDB, _ := globalDB.DB()
+	if GromDB != nil {
+		sqlDB, _ := GromDB.DB()
 		err := sqlDB.Ping()
 		if err != nil {
 			slog.Info("Ping MySQL 失败 ...")
@@ -99,8 +99,8 @@ func Ping() {
 
 // Close 关闭 MySQL 连接
 func Close() {
-	if globalDB != nil {
-		sqlDB, _ := globalDB.DB()
+	if GromDB != nil {
+		sqlDB, _ := GromDB.DB()
 		err := sqlDB.Close()
 		if err != nil {
 			slog.Info("关闭 MySQL 失败 ...")

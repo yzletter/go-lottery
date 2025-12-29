@@ -10,11 +10,11 @@ import (
 )
 
 var (
-	globalRedisClient *redis.Client
-	redisOnce         sync.Once
+	RedisClient *redis.Client
+	redisOnce   sync.Once
 )
 
-// Init 连接到 Redis 数据库, 生成一个 *redis.Client 赋给全局数据库变量 globalRedisClient
+// Init 连接到 Redis 数据库, 生成一个 *redis.Client 赋给全局数据库变量 RedisClient
 func Init(confDir, confFileName, confFileType string) redis.UniversalClient {
 	// 初始化 Viper 进行配置读取
 	viper := viper.InitViper(confDir, confFileName, confFileType)
@@ -30,41 +30,41 @@ func Init(confDir, confFileName, confFileType string) redis.UniversalClient {
 
 	// 连接到数据库
 	redisOnce.Do(func() {
-		globalRedisClient = redis.NewClient(redisOption)
+		RedisClient = redis.NewClient(redisOption)
 	})
 
 	// 尝试 ping 通
-	if err := globalRedisClient.Ping(context.Background()).Err(); err != nil { // 须加上.Err(), 否则会报 ping 通错
+	if err := RedisClient.Ping(context.Background()).Err(); err != nil { // 须加上.Err(), 否则会报 ping 通错
 		slog.Error("connect to Redis failed", "error", err)
 		panic(err)
 	} else {
 		slog.Info("connect to Redis succeed")
 	}
 
-	return globalRedisClient
+	return RedisClient
 }
 
 // Ping ping 一下数据库 保持连接
 func Ping() {
-	if globalRedisClient != nil {
-		err := globalRedisClient.Ping(context.Background()).Err()
+	if RedisClient != nil {
+		err := RedisClient.Ping(context.Background()).Err()
 		if err != nil {
-			slog.Info("ping globalRedisClient failed")
+			slog.Info("ping RedisClient failed")
 			return
 		}
-		slog.Info("ping globalRedisClient succeed")
+		slog.Info("ping RedisClient succeed")
 		return
 	}
 }
 
 func Close() {
-	if globalRedisClient != nil {
-		err := globalRedisClient.Close()
+	if RedisClient != nil {
+		err := RedisClient.Close()
 		if err != nil {
-			slog.Info("close globalRedisClient failed")
+			slog.Info("close RedisClient failed")
 			return
 		}
-		slog.Info("close globalRedisClient succeed")
+		slog.Info("close RedisClient succeed")
 		return
 	}
 }
