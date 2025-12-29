@@ -51,10 +51,10 @@ func main() {
 
 	mq.InitRocketLog()
 	go mq.Consume()
-	repository.CreateCacheInventory()
 
 	go ListenTermSignal()
 
+	repository.CreateCacheInventory()
 	gin.SetMode(gin.ReleaseMode)   //GIN线上发布模式
 	gin.DefaultWriter = io.Discard //禁止GIN的输出
 	engine := gin.Default()

@@ -44,7 +44,7 @@ func Lottery(ctx *gin.Context) {
 		}
 
 		// 没获取到库存
-		if len(gifts) == 0 {
+		if len(ids) == 0 {
 			ctx.String(200, strconv.Itoa(0)) // 0 表示抽完了
 			return
 		}
@@ -84,6 +84,7 @@ func Lottery(ctx *gin.Context) {
 
 		return
 	}
+	ctx.String(http.StatusOK, strconv.Itoa(1)) //如果10次之后还失败，则返回“谢谢参与”
 }
 
 func lottery(probs []float64) int {

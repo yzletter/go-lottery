@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"errors"
+	"fmt"
 	infraMySQL "github.com/yzletter/go-lottery/infra/mysql"
 	infraRedis "github.com/yzletter/go-lottery/infra/redis"
 	"github.com/yzletter/go-lottery/model"
@@ -17,6 +18,9 @@ const (
 // CreateCacheInventory 把 mysql 初始库存导进 redis
 func CreateCacheInventory() {
 	gifts := GetAllGifts()
+
+	fmt.Println("CreateCacheInventory")
+
 	for _, gift := range gifts {
 		if gift.Count <= 0 {
 			// 数据有问题
@@ -24,7 +28,7 @@ func CreateCacheInventory() {
 			continue
 		}
 
-		err := infraRedis.RedisClient.Set(context.Background(), InventoryPrefix+strconv.Itoa(gift.ID), gift.Count, 0) // 永不过期
+		err := infraRedis.RedisClient.Set(context.Background(), InventoryPrefix+strconv.Itoa(gift.ID), gift.Count, 0).Err() // 永不过期
 		if err != nil {
 			slog.Error("Set Failed", "error", err)
 		}
@@ -108,7 +112,7 @@ func GetAllGifts() []*model.Gift {
 // GetGift 根据 ID 获取奖品信息
 func GetGift(id int) *model.Gift {
 	var gift *model.Gift
-	err := infraMySQL.GromDB.Model(&model.Gift{}).Select("id = ?", id).Find(&gift).Error
+	err := infraMySQL.GromDB.Model(&model.Gift{}).Where("id = ?", id).Find(&gift).Error
 	if err != nil {
 		slog.Error("GetGift Failed", "error", err)
 		return nil

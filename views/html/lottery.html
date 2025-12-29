@@ -27,7 +27,7 @@
                 success: function (gifts) {
                     var prizes = new Array();
                     $.each(gifts, function (index, gift) {
-                        giftMap[gift.Id] = index;
+                        giftMap.set(gift.ID, index);
                         prizes[index] = { background: '#e9e8fe', fonts: [{ text: gift.Name }], imgs: [{ src: gift.Picture, top: 30, width: 80, height: 80 }] };
                     })
                     // 直接使用luch-canvas抽奖插件  https://100px.net/usage/js.html
@@ -54,7 +54,11 @@
                                         alert("抽奖结束")
                                     } else {
                                         myLucky.play();
-                                        idx = giftMap[giftId];
+                                        const idx = giftMap.get(Number(giftId));
+                                        if (idx === undefined) {
+                                            alert("奖品不存在");
+                                            return;
+                                        }
                                         myLucky.stop(idx);
                                     }
                                 }
