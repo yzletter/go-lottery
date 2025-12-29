@@ -1,7 +1,10 @@
 package repository
 
 import (
+	"context"
+	"errors"
 	"log/slog"
+	"strconv"
 
 	"github.com/redis/go-redis/v9"
 	"github.com/yzletter/go-lottery/model"
@@ -9,12 +12,97 @@ import (
 )
 
 type GiftRepository struct {
-	db     *gorm.DB
-	client redis.UniversalClient
+	db    *gorm.DB
+	cache redis.UniversalClient
 }
 
+const (
+	InventoryPrefix = "gift:count:" // 方便遍历
+)
+
 func NewGiftRepository(db *gorm.DB, client redis.UniversalClient) *GiftRepository {
-	return &GiftRepository{db: db, client: client}
+	return &GiftRepository{db: db, cache: client}
+}
+
+// CreateCacheInventory 把 mysql 初始库存导进 redis
+func (repo *GiftRepository) CreateCacheInventory() {
+	gifts := repo.GetAllGifts()
+	for _, gift := range gifts {
+		if gift.Count <= 0 {
+			// 数据有问题
+			slog.Error("Invalid Count", "name", gift.Name)
+			continue
+		}
+
+		err := repo.cache.Set(context.Background(), InventoryPrefix+strconv.Itoa(gift.ID), gift.Count, 0) // 永不过期
+		if err != nil {
+			slog.Error("Set Failed", "error", err)
+		}
+	}
+}
+
+// GetCacheInventory 从 Redis 中获得所有商品当前库存量
+func (repo *GiftRepository) GetCacheInventory() []*model.Gift {
+	keys, err := repo.cache.Keys(context.Background(), InventoryPrefix+"*").Result()
+	if err != nil {
+		slog.Error("Get Failed", "error", err)
+		return nil
+	}
+
+	gifts := make([]*model.Gift, 0, len(keys))
+	for _, key := range keys {
+		val, err := repo.cache.Get(context.Background(), key).Int()
+		if err != nil {
+			slog.Error("Get Failed", "error", err)
+			continue
+		}
+
+		id, err := strconv.Atoi(key[len(InventoryPrefix):])
+		if err != nil {
+			continue
+		}
+		gifts = append(gifts, &model.Gift{
+			ID:    id,
+			Count: val,
+		})
+	}
+
+	return gifts
+}
+
+func (repo *GiftRepository) GetCacheGift(id int) int {
+	key := InventoryPrefix + strconv.Itoa(id)
+	count, err := repo.cache.Get(context.Background(), key).Int()
+	if err != nil {
+		slog.Error("Get Failed", "error", err)
+		return -1
+	}
+	return count
+}
+
+// 库存 -1
+func (repo *GiftRepository) ReduceCacheGift(id int) error {
+	key := InventoryPrefix + strconv.Itoa(id)
+	count, err := repo.cache.Decr(context.Background(), key).Result()
+	if err != nil {
+		slog.Error("Get Failed", "error", err)
+		return err
+	} else if count < 0 {
+		slog.Error("没有库存了, 仍在减库存")
+		return errors.New("没有库存了, 仍在减库存")
+	}
+	return nil
+}
+
+// 库存 +1
+func (repo *GiftRepository) IncreaseCacheGift(id int) error {
+	key := InventoryPrefix + strconv.Itoa(id)
+	_, err := repo.cache.Incr(context.Background(), key).Result()
+	if err != nil {
+		slog.Error("Get Failed", "error", err)
+		return err
+	}
+	return nil
 }
 
 // GetAllGifts 获取所有奖品
