@@ -89,6 +89,11 @@ func Consume() {
 				continue
 			}
 			gid := repository.GetTempOrder(order.UserID)
+			if gid == order.GiftID {
+				// 支付超时，删除临时订单，增加库存
+				repository.DeleteTempOrder(order.UserID)
+				repository.IncreaseCacheGift(gid)
+			}
 			consumer.Ack(ctx, message)
 		}
 	}
